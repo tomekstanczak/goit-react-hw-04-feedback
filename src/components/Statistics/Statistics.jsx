@@ -1,7 +1,8 @@
+import css from './Statistics.module.css';
+
 const StatisticsDisplay = ({ good, neutral, bad, total, percentage }) => {
   return (
-    <div>
-      <h2>Statistics</h2>
+    <div className={total <= 0 ? css.hidden : css.show}>
       <p>Good: {good}</p>
       <p>Neutral: {neutral}</p>
       <p>Bad: {bad}</p>

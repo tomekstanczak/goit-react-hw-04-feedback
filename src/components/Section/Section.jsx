@@ -1,7 +1,7 @@
-const Section = ({ children }) => {
+const Section = ({ title, children }) => {
   return (
     <div>
-      <h1>Please leave feedback</h1>
+      <h1>{title}</h1>
       {children}
     </div>
   );

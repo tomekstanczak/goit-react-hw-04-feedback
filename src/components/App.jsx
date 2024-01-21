@@ -2,6 +2,7 @@ import { Component } from 'react';
 import FeedbackOptions from './FeedbackOptions/FeedbackOptions';
 import Statistics from './Statistics/Statistics';
 import Section from './Section/Section';
+import NotificationMsg from './NotificationMsg/NotificationMsg';
 
 class App extends Component {
   static defaultProps = {
@@ -54,11 +55,17 @@ class App extends Component {
           color: '#010101',
         }}
       >
-        <Section>
+        <Section title="Please leave feedback">
           <FeedbackOptions
             onHandleIncrementGood={() => this.handleIncrement('good')}
             onHandleIncrementNeutral={() => this.handleIncrement('neutral')}
             onHandleIncrementBad={() => this.handleIncrement('bad')}
+          />
+        </Section>
+        <Section title="Statistic">
+          <NotificationMsg
+            message="There is no feedback"
+            total={this.state.total}
           />
           <Statistics
             good={this.state.good}
