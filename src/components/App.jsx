@@ -21,7 +21,6 @@ class App extends Component {
     };
     this.handleIncrement = this.handleIncrement.bind(this);
   }
-
   handleIncrement = category => {
     this.setState(
       () => ({
@@ -56,11 +55,7 @@ class App extends Component {
         }}
       >
         <Section title="Please leave feedback">
-          <FeedbackOptions
-            onHandleIncrementGood={() => this.handleIncrement('good')}
-            onHandleIncrementNeutral={() => this.handleIncrement('neutral')}
-            onHandleIncrementBad={() => this.handleIncrement('bad')}
-          />
+          <FeedbackOptions handleIncrement={this.handleIncrement} />
         </Section>
         <Section title="Statistic">
           <NotificationMsg
