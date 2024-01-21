@@ -39,7 +39,7 @@ class App extends Component {
   };
   countPositiveFeedbackPercentage = () => {
     this.setState(({ good, total }) => ({
-      percentage: total > 0 ? (good / total) * 100 : 0,
+      percentage: total > 0 ? ((good / total) * 100).toFixed(0) : 0,
     }));
   };
 
