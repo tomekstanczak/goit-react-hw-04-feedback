@@ -1,24 +1,25 @@
 import css from './FeedbackOptions.module.css';
-import { Component } from 'react';
+import PropTypes from 'prop-types';
 
-class FeedbackOptions extends Component {
-  render() {
-    const buttons = ['good', 'neutral', 'bad'];
-    return (
-      <div className={css.buttonsList}>
-        {buttons.map(button => (
-          <button
-            className={css.buttonStyle}
-            key={button}
-            type="button"
-            onClick={() => this.props.handleIncrement(button)}
-          >
-            {button.toUpperCase()}
-          </button>
-        ))}
-      </div>
-    );
-  }
-}
+const FeedbackOptions = ({ options, onLeaveFeedback }) => {
+  return (
+    <div className={css.buttonsList}>
+      {options.map(option => (
+        <button
+          className={css.optionStyle}
+          key={option}
+          type="button"
+          onClick={() => onLeaveFeedback(option)}
+        >
+          {option.toUpperCase()}
+        </button>
+      ))}
+    </div>
+  );
+};
+
+FeedbackOptions.propTypes = {
+  options: PropTypes.array,
+};
 
 export default FeedbackOptions;

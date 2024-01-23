@@ -40,7 +40,7 @@ class App extends Component {
   };
   countPositiveFeedbackPercentage = () => {
     this.setState(({ good, total }) => ({
-      percentage: total > 0 ? ((good / total) * 100).toFixed(0) : 0,
+      percentage: total > 0 ? (good / total) * 100 : 0,
     }));
   };
 
@@ -57,7 +57,10 @@ class App extends Component {
         }}
       >
         <Section title="Please leave feedback">
-          <FeedbackOptions handleIncrement={this.handleIncrement} />
+          <FeedbackOptions
+            options={['good', 'neutral', 'bad']}
+            onLeaveFeedback={this.handleIncrement}
+          />
         </Section>
         <Section title="Statistic">
           <NotificationMsg
