@@ -3,6 +3,7 @@ import FeedbackOptions from './FeedbackOptions/FeedbackOptions';
 import Statistics from './Statistics/Statistics';
 import Section from './Section/Section';
 import NotificationMsg from './NotificationMsg/NotificationMsg';
+import PropTypes from 'prop-types';
 
 class App extends Component {
   static defaultProps = {
@@ -50,6 +51,7 @@ class App extends Component {
           height: '100vh',
           display: 'flex',
           justifyContent: 'center',
+          flexDirection: 'column',
           alignItems: 'center',
           color: '#010101',
         }}
@@ -74,5 +76,13 @@ class App extends Component {
     );
   }
 }
+
+App.propTypes = {
+  good: PropTypes.number,
+  bad: PropTypes.number,
+  neutral: PropTypes.number,
+  total: PropTypes.number,
+  percentage: PropTypes.number,
+};
 
 export default App;
