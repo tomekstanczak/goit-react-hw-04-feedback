@@ -1,113 +1,33 @@
 # React homework template
 
-Этот проект был создан при помощи
-[Create React App](https://github.com/facebook/create-react-app). Для знакомства
-и настройки дополнительных возможностей
-[обратись к документации](https://facebook.github.io/create-react-app/docs/getting-started).
+Feedback Collection and Analysis App (Course Assignment - React Hooks Edition)
 
-## Создание репозитория по шаблону
+This project represents an evolution of my React skills, showcasing an updated version of a feedback collection and analysis app. Originally developed as part of a coding course assignment, I revisited and refactored the code, transitioning from class-based components to functional components with React Hooks.
 
-Используй этот репозиторий организации GoIT как шаблон для создания репозитория
-своего проекта. Для этого нажми на кнопку `«Use this template»` и выбери опцию
-`«Create a new repository»`, как показано на изображении.
+Key Features:
 
-![Creating repo from a template step 1](./assets/template-step-1.png)
+    Interactive Feedback: Users can provide feedback through selectable options ('good', 'neutral', 'bad').
+    Dynamic Statistics: Real-time updates display the count of each feedback type and the overall feedback percentage.
+    Responsive Design: The user interface is designed to be adaptive for a seamless experience across various devices.
 
-На следующем шаге откроется страница создания нового репозитория. Заполни поле
-его имени, убедись что репозиторий публичный, после чего нажми кнопку
-`«Create repository from template»`.
+Changes and Enhancements:
 
-![Creating repo from a template step 2](./assets/template-step-2.png)
+    React Hooks: Transitioned from class-based components to functional components, utilizing state and effects with React Hooks.
+    Simplified State Management: Utilized the useState hook for a cleaner and more concise state management approach.
+    Side Effects with useEffect: Employed the useEffect hook for handling side effects, specifically for updating total feedback and positive feedback percentage.
+    Conditional Rendering: Improved code readability by simplifying conditional rendering in the handleIncrement function.
 
-После того как репозиторий будет создан, необходимо перейти в настройки
-созданного репозитория на вкладку `Settings` > `Actions` > `General` как
-показано на изображении.
+Technologies Used:
 
-![Settings GitHub Actions permissions step 1](./assets/gh-actions-perm-1.png)
+    React: Showcasing proficiency in both class-based and functional component approaches.
+    React Hooks: Demonstrating the ability to use modern React Hooks for state management and side effects.
+    PropTypes: Ensuring proper type checking for props to maintain data integrity.
+    GitHub Version Control: The project continues to be hosted on GitHub, highlighting version control skills acquired in the course.
 
-Проскролив страницу до самого конца, в секции `«Workflow permissions»` выбери
-опцию `«Read and write permissions»` и поставь галочку в чекбоксе. Это
-необходимо для автоматизации процесса деплоя проекта.
+Learning Goals:
 
-![Settings GitHub Actions permissions step 2](./assets/gh-actions-perm-2.png)
+    Understanding Hooks: Gain proficiency in using React Hooks for state management and side effects.
+    Code Refactoring: Practice refactoring code to improve readability and maintainability.
+    Continual Improvement: Open to feedback and suggestions to further enhance coding skills and project functionality.
 
-Теперь у тебя есть личный репозиторий проекта, со структурой файлов и папок
-репозитория-шаблона. Далее работай с ним как с любым другим личным репозиторием,
-клонируй его себе на компьютер, пиши код, делай коммиты и отправляй их на
-GitHub.
-
-## Подготовка к работе
-
-1. Убедись что на компьютере установлена LTS-версия Node.js.
-   [Скачай и установи](https://nodejs.org/en/) её если необходимо.
-2. Установи базовые зависимости проекта командой `npm install`.
-3. Запусти режим разработки, выполнив команду `npm start`.
-4. Перейди в браузере по адресу [http://localhost:3000](http://localhost:3000).
-   Эта страница будет автоматически перезагружаться после сохранения изменений в
-   файлах проекта.
-
-## Деплой
-
-Продакшн версия проекта будет автоматически проходить линтинг, собираться и
-деплоиться на GitHub Pages, в ветку `gh-pages`, каждый раз когда обновляется
-ветка `main`. Например, после прямого пуша или принятого пул-реквеста. Для этого
-необходимо в файле `package.json` отредактировать поле `homepage`, заменив
-`your_username` и `your_repo_name` на свои, и отправить изменения на GitHub.
-
-```json
-"homepage": "https://your_username.github.io/your_repo_name/"
-```
-
-Далее необходимо зайти в настройки GitHub-репозитория (`Settings` > `Pages`) и
-выставить раздачу продакшн версии файлов из папки `/root` ветки `gh-pages`, если
-это небыло сделано автоматически.
-
-![GitHub Pages settings](./assets/repo-settings.png)
-
-### Статус деплоя
-
-Статус деплоя крайнего коммита отображается иконкой возле его идентификатора.
-
-- **Желтый цвет** - выполняется сборка и деплой проекта.
-- **Зеленый цвет** - деплой завершился успешно.
-- **Красный цвет** - во время линтинга, сборки или деплоя произошла ошибка.
-
-Более детальную информацию о статусе можно посмотреть кликнув по иконке, и в
-выпадающем окне перейти по ссылке `Details`.
-
-![Deployment status](./assets/deploy-status.png)
-
-### Живая страница
-
-Через какое-то время, обычно пару минут, живую страницу можно будет посмотреть
-по адресу указанному в отредактированном свойстве `homepage`. Например, вот
-ссылка на живую версию для этого репозитория
-[https://goitacademy.github.io/react-homework-template](https://goitacademy.github.io/react-homework-template).
-
-Если открывается пустая страница, убедись что во вкладке `Console` нет ошибок
-связанных с неправильными путями к CSS и JS файлам проекта (**404**). Скорее
-всего у тебя неправильное значение свойства `homepage` в файле `package.json`.
-
-### Маршрутизация
-
-Если приложение использует библиотеку `react-router-dom` для маршрутизации,
-необходимо дополнительно настроить компонент `<BrowserRouter>`, передав в пропе
-`basename` точное название твоего репозитория. Слеш в начале строки обязателен.
-
-```jsx
-<BrowserRouter basename="/your_repo_name">
-  <App />
-</BrowserRouter>
-```
-
-## Как это работает
-
-![How it works](./assets/how-it-works.png)
-
-1. После каждого пуша в ветку `main` GitHub-репозитория, запускается специальный
-   скрипт (GitHub Action) из файла `.github/workflows/deploy.yml`.
-2. Все файлы репозитория копируются на сервер, где проект инициализируется и
-   проходит линтинг и сборку перед деплоем.
-3. Если все шаги прошли успешно, собранная продакшн версия файлов проекта
-   отправляется в ветку `gh-pages`. В противном случае, в логе выполнения
-   скрипта будет указано в чем проблема.
+Feel free to explore the updated code, provide feedback, or use it as a reference. I welcome any insights or recommendations to improve both the project and my learning experience.
