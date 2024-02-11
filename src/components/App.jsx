@@ -3,7 +3,6 @@ import FeedbackOptions from './FeedbackOptions/FeedbackOptions';
 import Statistics from './Statistics/Statistics';
 import Section from './Section/Section';
 import NotificationMsg from './NotificationMsg/NotificationMsg';
-import PropTypes from 'prop-types';
 
 function App() {
   const [good, setGood] = useState(0);
@@ -70,13 +69,5 @@ function App() {
     </div>
   );
 }
-
-App.propTypes = {
-  good: PropTypes.number,
-  bad: PropTypes.number,
-  neutral: PropTypes.number,
-  total: PropTypes.number,
-  percentage: PropTypes.number,
-};
 
 export default App;
