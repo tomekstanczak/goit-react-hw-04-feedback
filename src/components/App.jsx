@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import FeedbackOptions from './FeedbackOptions/FeedbackOptions';
 import Statistics from './Statistics/Statistics';
 import Section from './Section/Section';
@@ -8,8 +8,6 @@ function App() {
   const [good, setGood] = useState(0);
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
-  const [total, setTotal] = useState(0);
-  const [percentage, setPercentage] = useState(0);
 
   const handleIncrement = category => {
     if (category === 'good') {
@@ -23,21 +21,8 @@ function App() {
     }
   };
 
-  const countPositiveFeedbackPercentage = newTotal => {
-    setPercentage((good / newTotal) * 100);
-  };
-
-  const countTotalFeedback = () => {
-    setTotal(() => {
-      const newTotal = good + neutral + bad;
-      countPositiveFeedbackPercentage(newTotal);
-      return newTotal;
-    });
-  };
-
-  useEffect(() => {
-    countTotalFeedback();
-  }, [good, neutral, bad]);
+  const total = good + bad + neutral;
+  const percentage = (good / total) * 100;
 
   return (
     <div
